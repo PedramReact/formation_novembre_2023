@@ -19,7 +19,6 @@ explore: lieux {}
 explore: vin {}
 
 explore: accidents {
-  from: accidents
 }
 
 explore: usagers {}
