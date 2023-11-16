@@ -18,6 +18,8 @@ explore: lieux {}
 
 explore: vin {}
 
-explore: accidents {}
+explore: accidents {
+  from: accidents
+}
 
 explore: usagers {}
