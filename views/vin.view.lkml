@@ -40,11 +40,8 @@ view: vin {
     type: string
     sql: ${TABLE}.model ;;
   }
-  dimension_group: order {
-    type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
-    datatype: date
+  dimension: order_date {
+    type: string
     sql: ${TABLE}.order_date ;;
   }
   dimension: order_id {
