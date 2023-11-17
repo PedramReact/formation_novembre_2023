@@ -10,15 +10,6 @@ datagroup: formation_novembre_2023_default_datagroup {
 
 persist_with: formation_novembre_2023_default_datagroup
 
-explore: caracteristiques {}
 
-explore: vehicules {}
-
-explore: lieux {}
 
 explore: vin {}
-
-explore: accidents {
-}
-
-explore: usagers {}
