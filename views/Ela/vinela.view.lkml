@@ -1,6 +1,5 @@
-# include all the views
-include: "/views/**/vin.view.lkml"
-view: vin2 {
+
+view: vinela {
   dimension: model {
     type: string
     sql: ${TABLE}.model ;;
