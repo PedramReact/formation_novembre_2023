@@ -23,7 +23,6 @@ view: +vin {
   }
   dimension: Concat_Model_Version{
     type: string
-    sql: Concat(${model},${version})
-    drill_fields: [brand, model];;
+    sql: Concat(${model},${version});;
   }
 }
