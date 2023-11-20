@@ -6,6 +6,9 @@ view: +vin{
     sql:${model}  ;;
     drill_fields: [model]
   }
+  dimension: DealerNameModifier {
+    sql: replace(${dealer_name},' ','_');;
+  }
   set: source{
     fields: [model]
   }
