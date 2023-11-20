@@ -23,6 +23,19 @@ view: +vin{
     label: "Concat Model Version"
     drill_fields: [brand,model,version,catalogue_price]
   }
+  dimension_group: orderdatestringtodate {
+    type: time
+    timeframes: [
+      day_of_week,
+      week,
+      month,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${order_date} ;;
+    label: "Order date string to date"
+  }
   set: source{
     fields: [model,brand,version,catalogue_price]
   }
