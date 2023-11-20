@@ -43,6 +43,24 @@ view: +vin{
     sql: ${invoice_date} ;;
     html: {{ value | date: "%A %d %b %y" }};;
   }
+  measure: maxcatalogueprice {
+    type: max
+    sql: ${catalogue_price} ;;
+    label: "Max Catalogue Price"
+    value_format: "\"€\"0.0"
+  }
+  measure: mincatalogueprice {
+    type: min
+    value_format: "\"€\"0.0"
+    sql: ${catalogue_price} ;;
+    label: "Min Catalogue Price"
+  }
+  measure: avgcatalogueprice {
+    type: average
+    sql: ${catalogue_price} ;;
+    value_format: "\"€\"0.0"
+    label: "Avg Catalogue Price"
+  }
   set: source{
     fields: [model,brand,version,catalogue_price]
   }
