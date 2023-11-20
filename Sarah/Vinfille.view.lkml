@@ -1,6 +1,6 @@
 include: "/views/vin.view.lkml"
 view: +vin {
-  measure: distinct_engine {
+  measure: count {
     type: count_distinct
     sql: ${engine}
   ;;
