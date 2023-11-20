@@ -27,6 +27,6 @@ view: +vin {
   }
   dimension: order_date_test{
     type: date
-    sql: ${order_date};;
+    sql: DATE_FORMAT (${order_date},"%D %b %Y");;
   }
 }
