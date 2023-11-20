@@ -13,7 +13,7 @@ view: +vin {
     When ${fuel_type}='DIESEL' then 'Gasoil'
     When ${fuel_type}='ELECTRIC' then 'Electrique'
     When ${fuel_type}='PETROL' then 'Essence'
-    When ${fuel_type}='PETROL CNGGAZ' or ${fuel_type}='PETROL LPG ' then 'Gaz'
+    When (${fuel_type}='PETROL CNGGAZ' or ${fuel_type}='PETROL LPG') then 'Gaz'
     Else ''
     end;;
   }
