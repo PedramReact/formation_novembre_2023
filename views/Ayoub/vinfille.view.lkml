@@ -36,8 +36,14 @@ view: +vin {
     sql: ${model}||"-"||${version} ;;
     drill_fields: [brand, model, version, catalogue_price]
   }
-  dimension: order_date_string_to_date {
-    type: date
-    sql: PARSE_DATE(%Y-%m-%d, ${order_date}) ;;
+  dimension_group: order_date_string_to_date {
+    type: time
+    datatype: date
+    timeframes: [year, month_num, week_of_year, day_of_week]
+    sql: ${TABLE}.order_date ;;
+  }
+  dimension: date {
+    sql: ${invoice_date} ;;
+    html: {{rendered_value | date: "%A %d %b %C" }} ;;
   }
  }
