@@ -25,4 +25,8 @@ view: +vin {
     type: string
     sql: Concat(${model},${version});;
   }
+  dimension: order_date_test{
+    type: string
+    sql: PARSE_DATE("%Y-%m-%d", ${order_date});;
+  }
 }
