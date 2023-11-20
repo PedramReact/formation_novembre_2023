@@ -2,6 +2,7 @@ connection: "formation_looker"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/gba/add_view_vin.view.lkml"
 datagroup: formation_novembre_2023_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
