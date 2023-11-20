@@ -4,8 +4,5 @@ view: +vin {
     type:  count_distinct
     sql: ${model};;
   }
-  measure: distinct_engine {
-    type:  count_distinct
-    sql: ${engine};;
-  }
+  drill_fields: [distinct_model]
 }
