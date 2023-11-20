@@ -25,8 +25,16 @@ view: +vin {
     type: string
     sql: Concat(${model},${version});;
   }
-  dimension: order_date_test{
-    type: date
-    sql: DATE_FORMAT (${order_date},"%D %b %Y");;
+  dimension_group: order_date_test{
+    type: time
+    timeframes:  [
+      date,
+      week,
+      month,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${order_date};;
   }
 }
