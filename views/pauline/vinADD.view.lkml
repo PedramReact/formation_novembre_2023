@@ -47,20 +47,19 @@ view: +vin {
     type: average
     sql: ${catalogue_price};;
     value_format_name: eur
-    value_format: "0.0"
+    value_format: "0.0€"
   }
 
   measure: Min_catalogue_price {
     type: min
     sql: ${catalogue_price};;
     value_format_name: eur
-    value_format: "0.0"
+    value_format: "0.0€"
   }
 
   measure: Max_catalogue_price {
     type: max
     sql: ${catalogue_price};;
-    value_format_name: eur
-    value_format: "0.0"
+    value_format: "0.0€"
   }
 }
