@@ -1,6 +1,6 @@
 include: "/views/vin.view.lkml"
 view: +vin{
-  drill_fields: [source*,model]
+  drill_fields: [source*,model,brand,version,catalogue_price]
   measure: distinct_engine {
     type: count_distinct
     sql:${model}  ;;
@@ -18,7 +18,12 @@ view: +vin{
             End;;
     label: "type de carburant"
   }
+  dimension: concatenateModelVersion {
+    sql: concat(${model},${version}) ;;
+    label: "Concat Model Version"
+    drill_fields: [brand,model,version,catalogue_price]
+  }
   set: source{
-    fields: [model]
+    fields: [model,brand,version,catalogue_price]
   }
   }
