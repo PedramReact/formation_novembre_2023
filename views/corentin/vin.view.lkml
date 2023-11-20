@@ -4,5 +4,7 @@ view: +vin {
     type:  count_distinct
     sql: ${model};;
   }
-  drill_fields: [distinct_model]
+  dimension: model {
+    drill_fields: [distinct_model, model]
+  }
 }
