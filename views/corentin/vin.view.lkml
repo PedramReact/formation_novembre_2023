@@ -25,7 +25,7 @@ view: +vin {
     type: string
     sql: Concat(${model},${version});;
   }
-  dimension_group: order_date_test{
+  dimension_group: order_date{
     type: time
     timeframes:  [
       date,
