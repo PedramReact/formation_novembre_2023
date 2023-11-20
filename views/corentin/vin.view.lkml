@@ -21,4 +21,8 @@ view: +vin {
     Else ''
     end;;
   }
+  dimension: Concat_Model_Version{
+    type: string
+    sql: Concat(${model},${version});;
+  }
 }
