@@ -36,6 +36,13 @@ view: +vin{
     sql: ${order_date} ;;
     label: "Order date string to date"
   }
+  dimension: date_formatted {
+    #group_label: "Created date"
+    label: "Date"
+    type: date
+    sql: ${invoice_date} ;;
+    html: {{ value | date: "%A %d %b %y" }};;
+  }
   set: source{
     fields: [model,brand,version,catalogue_price]
   }
