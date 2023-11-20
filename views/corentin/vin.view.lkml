@@ -26,7 +26,7 @@ view: +vin {
     sql: Concat(${model},${version});;
   }
   dimension: order_date_test{
-    type: string
+    type: date
     sql: CONVERT(DATETIME,${order_date},103);;
   }
 }
