@@ -39,11 +39,41 @@ view: +vin {
   dimension_group: order_date_string_to_date {
     type: time
     datatype: date
-    timeframes: [year, month_num, week_of_year, day_of_week]
+    timeframes: [raw, year, month_num, week_of_year, day_of_week]
     sql: ${TABLE}.order_date ;;
   }
   dimension: date {
     sql: ${invoice_date} ;;
     html: {{rendered_value | date: "%A %d %b %C" }} ;;
+  }
+  measure: min_catalogue {
+    sql: MIN(${catalogue_price}) ;;
+    html: {{rendered_value}}€ ;;
+  }
+  measure: max_catalogue {
+    sql: MAX(${catalogue_price}) ;;
+    html: {{rendered_value}}€ ;;
+  }
+  measure: avg_catalogue {
+    sql: AVG(${catalogue_price}) ;;
+    html: {{rendered_value}}€ ;;
+  }
+  dimension_group: date_difference {
+    type: duration
+    intervals: [day]
+    sql_start: ${order_date_string_to_date_raw} ;;
+    sql_end: ${invoice_date} ;;
+  }
+  measure: date_difference_max {
+    type: number
+    sql: MAX(${days_date_difference}) ;;
+  }
+  measure: date_difference_min {
+    type: number
+    sql: MIN(${days_date_difference}) ;;
+  }
+  measure: date_difference_avg {
+    type: number
+    sql: AVG(${days_date_difference}) ;;
   }
  }
