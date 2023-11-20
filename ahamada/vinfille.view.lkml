@@ -14,7 +14,7 @@ view: +vin{
             when ${fuel_type}='DIESEL'   then 'Gasoil'
             when ${fuel_type}='ELECTRIC' then 'Electrique'
             when ${fuel_type}='PETROL'   then 'Essence'
-            when ${fuel_type}='PETROL CNGGAZ' or ${fuel_type}='PETROL LPG' then 'Gaz'
+            when ${fuel_type} in ('PETROL CNGGAZ','PETROL LPG') then 'Gaz'
             End;;
     label: "type de carburant"
   }
