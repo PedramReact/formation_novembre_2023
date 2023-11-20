@@ -9,6 +9,15 @@ view: +vin{
   dimension: DealerNameModifier {
     sql: replace(${dealer_name},' ','_');;
   }
+  dimension: typeCarburant {
+    sql: case
+            when ${fuel_type}='DIESEL'   then 'Gasoil'
+            when ${fuel_type}='ELECTRIC' then 'Electrique'
+            when ${fuel_type}='PETROL'   then 'Essence'
+            when ${fuel_type}='PETROL CNGGAZ' or ${fuel_type}='PETROL LPG' then 'Gaz'
+            End;;
+    label: "type de carburant"
+  }
   set: source{
     fields: [model]
   }
