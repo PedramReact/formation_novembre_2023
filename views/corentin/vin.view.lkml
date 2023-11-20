@@ -7,6 +7,10 @@ view: +vin {
   dimension: model {
     drill_fields: [distinct_model, model]
   }
+  dimension: delearnamemodif {
+    type: string
+    sql: REPLACE(${dealer_name},' ','-');;
+  }
   dimension: typedecarburant{
     type: string
     sql: CASE
