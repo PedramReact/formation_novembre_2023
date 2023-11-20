@@ -62,4 +62,24 @@ view: +vin {
     sql: ${catalogue_price};;
     value_format: "0.0€"
   }
+
+  dimension:  diff_day_order_invoice_date{
+    type: number
+    sql: DATE_DIFF(${invoice_date},${order_date}, DAY) ;;
+  }
+
+  measure:  max_diff_day_order_invoice_date{
+    type: max
+    sql: ${diff_day_order_invoice_date} ;;
+  }
+
+  measure:  min_diff_day_order_invoice_date{
+    type: min
+    sql: ${diff_day_order_invoice_date} ;;
+  }
+
+  measure:  avg_diff_day_order_invoice_date{
+    type: average
+    sql: ${diff_day_order_invoice_date} ;;
+  }
 }
