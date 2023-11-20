@@ -27,6 +27,6 @@ view: +vin {
   }
   dimension: order_date_test{
     type: date
-    sql: CONVERT(DATETIME,${order_date},103);;
+    sql: ${order_date};;
   }
 }
