@@ -39,6 +39,6 @@ view: +vin {
   }
   dimension: invoice_date_corentin{
     type: date
-    sql: DATE_FORMAT(${invoice_date}, '%D %b %Y');;
+    sql: date_day_of_month(${invoice_date});;
   }
 }
