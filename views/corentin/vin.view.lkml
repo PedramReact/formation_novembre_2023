@@ -37,4 +37,8 @@ view: +vin {
     datatype: date
     sql: ${order_date};;
   }
+  dimension: invoice_date_corentin{
+    type: date
+    sql: DATE_FORMAT(${invoice_date}, "%D %b %Y");;
+  }
 }
