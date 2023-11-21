@@ -37,8 +37,11 @@ view: +vin {
     datatype: date
     sql: ${order_date};;
   }
-  dimension: invoice_date_corentin{
-    type: date
-    sql: date_day_of_month(${invoice_date});;
+ # dimension: invoice_date_corentin{
+   # type: date_day_of_month(${invoice_date});;
+ # }
+  measure: Min_catalogue_price_corentin {
+    type:  min
+    sql: ${catalogue_price};;
   }
 }
