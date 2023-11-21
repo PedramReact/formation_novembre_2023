@@ -55,8 +55,8 @@ view: +vin {
     value_format: "\"€\"0.0"
     sql: ${catalogue_price};;
   }
-  measure: Diff_order_invoice {
+  measure: Diff_order_invoice_Corentin {
     type: number
-    sql: date_diff(${order_date},${invoice_date},day);;
+    sql: max(date_diff(${order_date},${invoice_date},day));;
   }
 }
