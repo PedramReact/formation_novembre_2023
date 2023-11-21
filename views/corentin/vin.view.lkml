@@ -1,17 +1,17 @@
 include: "/views/vin.view.lkml"
 view: +vin {
-  measure: distinct_model {
+  measure: distinct_model_corentin {
     type:  count_distinct
     sql: ${model};;
   }
   dimension: model {
-    drill_fields: [distinct_model, model]
+    drill_fields: [distinct_model_corentin, model]
   }
-  dimension: delearnamemodif {
+  dimension: delearnamemodif_corentin {
     type: string
     sql: REPLACE(${dealer_name},' ','-');;
   }
-  dimension: typedecarburant{
+  dimension: typedecarburant_corentin{
     type: string
     sql: CASE
     When ${fuel_type}='DIESEL' then 'Gasoil'
@@ -21,11 +21,11 @@ view: +vin {
     Else ''
     end;;
   }
-  dimension: Concat_Model_Version{
+  dimension: Concat_Model_Version_corentin{
     type: string
     sql: Concat(${model},${version});;
   }
-  dimension_group: order_date{
+  dimension_group: order_date_corentin{
     type: time
     timeframes:  [
       date,
