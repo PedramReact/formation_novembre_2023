@@ -57,6 +57,18 @@ view: +vin {
   }
   measure: Diff_order_invoice_Corentin {
     type: number
-    sql: max(date_diff(${order_date},${invoice_date},day));;
+    sql: date_diff(${invoice_date},${order_date},day);;
+  }
+  measure: Min_Diff_order_invoice_Corentin {
+    type: min
+    sql: date_diff(${invoice_date},${order_date},day);;
+  }
+  measure: Max_Diff_order_invoice_Corentin {
+    type: max
+    sql: date_diff(${invoice_date},${order_date},day);;
+  }
+  measure: Avg_Diff_order_invoice_Corentin {
+    type: average
+    sql: date_diff(${invoice_date},${order_date},day);;
   }
 }
