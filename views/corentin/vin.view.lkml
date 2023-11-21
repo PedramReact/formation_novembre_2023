@@ -71,4 +71,10 @@ view: +vin {
     type: average
     sql: date_diff(${invoice_date},${order_date},day);;
   }
+  dimension: image_corentin{
+    sql:  ${brand} ;;
+    link : {
+      url : "RENAULT : https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg"
+      }
+  }
 }
