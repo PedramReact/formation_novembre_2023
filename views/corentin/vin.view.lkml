@@ -73,8 +73,8 @@ view: +vin {
   }
   dimension: image_corentin{
     sql: CASE
-    When ${brand}='ALPINE' then html: <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg" />
-    Else html: <img src=https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" />
+    When ${brand}='ALPINE' then "html: <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg" />"
+    Else "html: <img src=https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" />"
     end  ;;
     }
   }
