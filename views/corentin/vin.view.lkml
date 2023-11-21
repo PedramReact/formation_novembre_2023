@@ -56,7 +56,7 @@ view: +vin {
     sql: ${catalogue_price};;
   }
   measure: Diff_order_invoice {
-    type:  number
-    sql: datediff(day,${order_date},${invoice_date}) ;;
+    type: number
+    sql: date_diff(day,${order_date},${invoice_date}) ;;
   }
 }
