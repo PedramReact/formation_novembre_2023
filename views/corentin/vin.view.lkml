@@ -71,10 +71,16 @@ view: +vin {
     type: average
     sql: date_diff(${invoice_date},${order_date},day);;
   }
-  dimension: image_corentin{
-    sql: CASE
-    When ${brand}='ALPINE' then "<img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg"/>"
-    Else ''
-    end ;;
-    }
+  dimension: image_Alpine_corentin{
+        sql: ${brand}='ALPINE';;
+        html: <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg"  />;;
+     }
+  dimension: image_Renault_corentin{
+    sql: ${brand}='RENAULT';;
+    html: <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg"  />;;
   }
+  dimension: image_Dacia_corentin{
+    sql: ${brand}='DACIA';;
+    html: <img src="https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg"  />;;
+  }
+}
