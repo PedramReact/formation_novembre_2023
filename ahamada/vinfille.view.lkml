@@ -26,6 +26,7 @@ view: +vin{
   dimension_group: orderdatestringtodate {
     type: time
     timeframes: [
+      date,
       day_of_week,
       week,
       month,
@@ -47,19 +48,40 @@ view: +vin{
     type: max
     sql: ${catalogue_price} ;;
     label: "Max Catalogue Price"
-    value_format: "\"€\"0.0"
+    value_format: "0.0€"
   }
   measure: mincatalogueprice {
     type: min
-    value_format: "\"€\"0.0"
+    value_format: "0.0€"
     sql: ${catalogue_price} ;;
     label: "Min Catalogue Price"
   }
   measure: avgcatalogueprice {
     type: average
     sql: ${catalogue_price} ;;
-    value_format: "\"€\"0.0"
+    value_format: "0.0€"
     label: "Avg Catalogue Price"
+  }
+  measure: diffdate {
+    type: number
+    sql: date_diff(${invoice_date},${orderdatestringtodate_date},day) ;;
+    label: "diff"
+  }
+  measure: mindiff {
+    type: min
+    sql: date_diff(${invoice_date},${orderdatestringtodate_date},day) ;;
+    label: "min of dif"
+  }
+  measure: maxdiff {
+    type: max
+    sql: date_diff(${invoice_date},${orderdatestringtodate_date},day) ;;
+    label: "max of dif"
+  }
+  measure: avgdiff {
+    type: average
+    value_format: "0"
+    sql: date_diff(${invoice_date},${orderdatestringtodate_date},day) ;;
+    label: "avg of dif"
   }
   set: source{
     fields: [model,brand,version,catalogue_price]
