@@ -55,4 +55,8 @@ view: +vin {
     value_format: "\"€\"0.0"
     sql: ${catalogue_price};;
   }
+  measure: Diff_order_invoice {
+    type:  number
+    sql: datediff(day,${order_date},${invoice_date}) ;;
+  }
 }
