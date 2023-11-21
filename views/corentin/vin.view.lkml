@@ -73,8 +73,6 @@ view: +vin {
   }
   dimension: image_corentin{
     sql:  ${brand} ;;
-    link : {
-      url : "https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg"
+    html: <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg" />;;
     }
   }
-}
