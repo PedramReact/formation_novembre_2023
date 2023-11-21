@@ -42,6 +42,17 @@ view: +vin {
  # }
   measure: Min_catalogue_price_corentin {
     type:  min
+    value_format: "\"€\"1"
+    sql: ${catalogue_price};;
+  }
+  measure: Max_catalogue_price_corentin {
+    type:  max
+    value_format: "\"€\"1"
+    sql: ${catalogue_price};;
+  }
+  measure: Avg_catalogue_price_corentin {
+    type:  average
+    value_format: "\"€\"1"
     sql: ${catalogue_price};;
   }
 }
