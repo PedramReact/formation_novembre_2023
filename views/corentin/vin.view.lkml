@@ -4,7 +4,7 @@ view: +vin {
     type:  count_distinct
     sql: ${model};;
   }
-  dimension: model {
+  dimension: model_corentin {
     drill_fields: [distinct_model_corentin, model]
   }
   dimension: delearnamemodif_corentin {
@@ -38,9 +38,10 @@ view: +vin {
     datatype: date
     sql: ${order_date};;
   }
- # dimension: invoice_date_corentin{
-   # type: date_day_of_month(${invoice_date});;
- # }
+ dimension: invoice_date_corentin{
+   type: date_day_of_month
+  sql: ${invoice_date};;
+ }
   measure: Min_catalogue_price_corentin {
     type:  min
     value_format: "\"€\"0.0"
