@@ -82,4 +82,17 @@ view: +vin {
     type: average
     sql: ${diff_day_order_invoice_date} ;;
   }
+
+  dimension:  brand_logo{
+    sql: ${brand} ;;
+    html:
+      {% if value =='RENAULT'%}
+      <https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg>
+      {% elsif value =='DACIA'%}
+      <https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg>
+      {% elsif value =='ALPINE'%}
+      <https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg>
+      {% endif%}
+      ;;
+  }
 }
