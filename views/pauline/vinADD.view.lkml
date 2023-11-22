@@ -86,13 +86,13 @@ view: +vin {
   dimension:  brand_logo{
     sql: ${brand} ;;
     html:
-      {% if value =='RENAULT'%}
-      <https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg>
-      {% elsif value =='DACIA'%}
-      <https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg>
-      {% elsif value =='ALPINE'%}
-      <https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg>
-      {% endif%}
+      {% if value =='RENAULT' %}
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg" height="170" width="255">
+      {% elsif value =='DACIA' %}
+        <img src="https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg" height="170" width="255">>
+      {% elsif value =='ALPINE' %}
+        <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" height="170" width="255">>
+      {% endif %}
       ;;
   }
 }
