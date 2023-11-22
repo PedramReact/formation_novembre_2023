@@ -42,8 +42,15 @@ view: +vin {
    type: date_day_of_month
   sql: ${invoice_date};;
  }
-  dimension: invoice_year_corentin{
-    type: date_year
+  dimension_group: invoice_date_corentin{
+    type: time
+    timeframes:  [
+      day_of_week,
+      day_of_month,
+      month_name,
+      year
+    ]
+    datatype: date
     sql: ${invoice_date};;
   }
   measure: Min_catalogue_price_corentin {
