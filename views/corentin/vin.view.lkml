@@ -38,10 +38,14 @@ view: +vin {
     datatype: date
     sql: ${order_date};;
   }
- dimension: invoice_date_corentin{
+ dimension: invoice_date_day_corentin{
    type: date_day_of_month
   sql: ${invoice_date};;
  }
+  dimension: invoice_year_corentin{
+    type: date_year
+    sql: ${invoice_date};;
+  }
   measure: Min_catalogue_price_corentin {
     type:  min
     value_format: "\"€\"0.0"
