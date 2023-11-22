@@ -51,7 +51,7 @@ view: +vin {
   }
   dimension: invoice_date_ex7_corentin{
     type: string
-    sql: Concat(${invoice_date_corentin_day_of_week},${invoice_date_corentin_day_of_month},${invoice_date_corentin_month_name},${invoice_date_corentin_year});;
+    sql: Concat(${invoice_date_corentin_day_of_week},' ',${invoice_date_corentin_day_of_month},' ',${invoice_date_corentin_month_name},' ',right(${invoice_date_corentin_year},2));;
   }
   measure: Min_catalogue_price_corentin {
     type:  min
