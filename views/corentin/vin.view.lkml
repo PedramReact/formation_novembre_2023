@@ -3,9 +3,7 @@ view: +vin {
   measure: distinct_model_corentin {
     type:  count_distinct
     sql: ${model};;
-  }
-  dimension: model_corentin {
-    drill_fields: [distinct_model_corentin, model]
+    drill_fields: [model]
   }
   dimension: delearnamemodif_corentin {
     type: string
