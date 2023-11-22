@@ -24,6 +24,7 @@ view: +vin {
   dimension: Concat_Model_Version_corentin{
     type: string
     sql: Concat(${model},${version});;
+    drill_fields: [brand, model, version,catalogue_price]
   }
   dimension_group: order_date_corentin{
     type: time
