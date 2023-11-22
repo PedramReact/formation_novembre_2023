@@ -38,10 +38,6 @@ view: +vin {
     datatype: date
     sql: ${order_date};;
   }
- dimension: invoice_date_day_corentin{
-   type: date_day_of_month
-  sql: ${invoice_date};;
- }
   dimension_group: invoice_date_corentin{
     type: time
     timeframes:  [
@@ -52,6 +48,10 @@ view: +vin {
     ]
     datatype: date
     sql: ${invoice_date};;
+  }
+  dimension: invoice_date_ex7_corentin{
+    type: string
+    sql: sql: Concat(${invoice_date_corentin_day_of_week},${invoice_date_corentin_day_of_month},${invoice_date_corentin_month_name},${invoice_date_corentin_year});;
   }
   measure: Min_catalogue_price_corentin {
     type:  min
