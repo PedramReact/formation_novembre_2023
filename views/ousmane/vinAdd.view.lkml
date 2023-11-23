@@ -1,5 +1,6 @@
 include: "/views/vin.view.lkml"
 view: +vin {
+
   measure: distinct_model {
     type: count_distinct
     sql: ${model} ;;
@@ -72,6 +73,21 @@ view: +vin {
   dimension: dif {
     type: number
     sql: date_diff(${invoice_date},${order_date_string_to_date_date},day) ;;
+  }
+
+  measure: min_of_dif {
+    type: min
+    sql: ${dif}if} ;;
+  }
+
+  measure: max_of_dif {
+    type: max
+    sql: ${dif} ;;
+  }
+
+  measure: avg_of_dif {
+    type: average
+    sql: ${dif} ;;
   }
 
 }
