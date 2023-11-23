@@ -69,5 +69,9 @@ view: +vin {
     value_format: "#.0€"
   }
 
+  dimension: dif {
+    type: number
+    sql: date_diff(${invoice_date},${order_date_string_to_date_date},day) ;;
+  }
 
 }
