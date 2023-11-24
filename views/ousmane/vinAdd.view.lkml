@@ -35,7 +35,7 @@ view: +vin {
   }
 
   #
-  dimension_group: order_date_string_to_date {
+  dimension_group: order_date_string_to_date_ {
     type: time
     timeframes: [
       date,
@@ -80,7 +80,7 @@ view: +vin {
   #
   dimension: dif {
     type: number
-    sql: date_diff(${invoice_date},${order_date_string_to_date_date},day) ;;
+    sql: date_diff(${invoice_date},${order_date_string_to_date__date},day) ;;
   }
 
   #
@@ -108,6 +108,7 @@ view: +vin {
     {% if value == "ALPINE" %}
     <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" height="170" width="255"/
     {% endif %}
+
     ;;
   }
 }
