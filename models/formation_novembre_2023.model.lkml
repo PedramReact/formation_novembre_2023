@@ -4,6 +4,10 @@ connection: "formation_looker"
 include: "/views/**/*.view.lkml"
 include: "/ahamada/vinfille.view.lkml"
 include: "/ahamada/Dashbordcopy.dashboard.lookml"
+include: "/ahamada/lieuxfille.view.lkml"
+include: "/ahamada/usagersfille.view.lkml"
+include: "/ahamada/vehiculesfille.view.lkml"
+include: "/ahamada/caracteristiquesfille.view.lkml"
 datagroup: formation_novembre_2023_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
@@ -14,3 +18,7 @@ persist_with: formation_novembre_2023_default_datagroup
 
 
 explore: vin {}
+explore: lieux {}
+explore: usagers {}
+explore: vehicules {}
+explore: caracteristiques {}
