@@ -81,6 +81,31 @@ view:  +vin
     sql:  ${catalogue_price};;
   }
 
+  dimension: difference_date
+  {
+    type: number
+    sql:  date_diff(${invoice_date},${order_date_date},day) ;;
+  }
+
+  measure: min_difference_date
+  {
+    type: min
+    sql:  ${difference_date};;
+  }
+
+  measure: max_difference_date
+  {
+    type: max
+    sql:  ${difference_date};;
+  }
+
+  measure: avg_difference_date
+  {
+    type: average
+    sql:  ${difference_date};;
+  }
+
+
   set: source {
     fields: [brand,Dealer_Name_Modified]
   }
