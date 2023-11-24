@@ -1,4 +1,4 @@
----
+
 - dashboard: formation
   title: Formation
   layout: newspaper
