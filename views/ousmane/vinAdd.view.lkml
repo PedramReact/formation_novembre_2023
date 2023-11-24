@@ -60,21 +60,21 @@ view: +vin {
   measure: min_catalogue_price {
     type: min
     sql: ${catalogue_price} ;;
-    value_format: "#.0€"
+    value_format: "0.0€"
   }
 
   #
   measure: max_catalogue_price {
     type: max
     sql: ${catalogue_price} ;;
-    value_format: "#.0€"
+    value_format: "0.0€"
   }
 
   #
   measure: avg_catalogue_price {
     type: average
     sql: ${catalogue_price} ;;
-    value_format: "#.0€"
+    value_format: "0.0€"
   }
 
   #
@@ -101,4 +101,13 @@ view: +vin {
     sql: ${dif} ;;
   }
 
+  #
+  dimension: brand_logo {
+    sql: ${brand} ;;
+    html:
+    {% if value == "ALPINE" %}
+    <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" height="170" width="255"/
+    {% endif %}
+    ;;
+  }
 }
