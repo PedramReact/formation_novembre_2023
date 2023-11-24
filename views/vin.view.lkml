@@ -56,4 +56,10 @@ view: vin {
     type: count
     drill_fields: [dealer_name]
   }
+
+  measure: Dif {
+    type: number
+    sql: date_diff(day,${order_date},${invoice_date}) ;;
+  }
+
 }
