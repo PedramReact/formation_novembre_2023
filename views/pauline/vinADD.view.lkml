@@ -22,6 +22,7 @@ view: +vin {
   dimension: Concat_Model_Version {
     type:  string
     sql: CONCAT(${model},CONCAT('-',${version})) ;;
+    drill_fields: [brand,model, version, catalogue_price]
   }
   dimension_group: order2 {
     type:  time
@@ -53,7 +54,6 @@ view: +vin {
   measure: Min_catalogue_price {
     type: min
     sql: ${catalogue_price};;
-    value_format_name: eur
     value_format: "0.0€"
   }
 
@@ -81,6 +81,7 @@ view: +vin {
   measure:  avg_diff_day_order_invoice_date{
     type: average
     sql: ${diff_day_order_invoice_date} ;;
+    value_format: "0.0"
   }
 
   dimension:  brand_logo{
@@ -89,9 +90,9 @@ view: +vin {
       {% if value =='RENAULT' %}
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg" height="170" width="255">
       {% elsif value =='DACIA' %}
-        <img src="https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg" height="170" width="255">>
+        <img src="https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg" height="170" width="255">
       {% elsif value =='ALPINE' %}
-        <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" height="170" width="255">>
+        <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" height="170" width="255">
       {% endif %}
       ;;
   }

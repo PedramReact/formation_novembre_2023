@@ -13,3 +13,21 @@ persist_with: formation_novembre_2023_default_datagroup
 
 
 explore: vin {}
+
+explore: vehicules {
+  join: usagers {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${vehicules.id_vehicule}=${usagers.id_vehicule} ;;
+  }
+  join: caracteristiques {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${vehicules.num_acc} = ${caracteristiques.num_acc};;
+  }
+  join: lieux {
+    type: left_outer
+    relationship:  many_to_one
+    sql_on: ${vehicules.num_acc} = ${lieux.num_acc};;
+  }
+}
