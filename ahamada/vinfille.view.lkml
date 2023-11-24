@@ -83,6 +83,17 @@ view: +vin{
     sql: date_diff(${invoice_date},${orderdatestringtodate_date},day) ;;
     label: "avg of dif"
   }
+  dimension: imge {
+    sql: ${brand} ;;
+    html:
+       {% if value=="RENAULT" %}
+         <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg"> {% endif %}
+       {% if value=="DACIA" %}
+         <img src="https://upload.wikimedia.org/wikipedia/fr/4/4d/Logo_Dacia.svg"> {% endif %}
+       {% if value=="ALPINE" %}
+         <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg">
+       {% endif %};;
+  }
   set: source{
     fields: [model,brand,version,catalogue_price]
   }
