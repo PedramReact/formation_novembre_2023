@@ -104,11 +104,11 @@ view:  +vin
     sql:  ${difference_date};;
   }
 
-#dimension: brand_logo {
-#  sql: ${brand}  ;;
-#  html: { % if  value == "ALPINE" %}
-#  html: <img src: "https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" /> {% endif %}
-#  }
+dimension: brand_logo {
+ sql: ${brand}  ;;
+ html: { % if  value == "ALPINE" %}
+ html: <img src: "https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" /> {% endif %};;
+}
 
   set: source {
     fields: [brand,Dealer_Name_Modified]
