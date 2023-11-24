@@ -3,7 +3,11 @@ connection: "formation_looker"
 # include all the views
 include: "/views/**/*.view.lkml"
 include: "/ahamada/vinfille.view.lkml"
+
 include: "/test_dashboard_pauline.dashboard.lookml"
+
+include: "/ahamada/Dashbordcopy.dashboard.lookml"
+
 datagroup: formation_novembre_2023_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
