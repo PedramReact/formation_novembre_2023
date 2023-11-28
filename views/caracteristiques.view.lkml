@@ -75,6 +75,7 @@ view: caracteristiques {
     type: number
     description: "Numéro d'identifiant de l’accident."
     sql: ${TABLE}.Num_Acc ;;
+    hidden: yes
   }
   measure: count {
     type: count
