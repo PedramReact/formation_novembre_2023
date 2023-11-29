@@ -6,12 +6,6 @@ include: "/views/usagers.view.lkml"
 
 
 explore: vehicules {
-  join : accidents  {
-    view_label: "accidents"
-    type: left_outer
-    relationship: one_to_one
-    sql_on: ${vehicules.num_acc}=Integer(${accidents.id_accident});;
-  }
   join : usagers  {
     view_label: "usagers"
     type: left_outer
@@ -22,12 +16,12 @@ explore: vehicules {
     view_label: "lieux"
     type: left_outer
     relationship: one_to_one
-    sql_on: ${accidents.id_accident}=${lieux.num_acc};;
+    sql_on: ${vehicules.num_acc}=${lieux.num_acc};;
   }
   join : caracteristiques  {
     view_label: "caracteristiques"
     type: left_outer
     relationship: one_to_one
-    sql_on: ${accidents.id_accident}=${caracteristiques.num_acc};;
+    sql_on: ${vehicules.num_acc}=${caracteristiques.num_acc};;
   }
 }
