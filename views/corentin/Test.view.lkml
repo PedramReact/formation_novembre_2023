@@ -1,1 +1,1 @@
-include: "/views/vin.view.lkml"
+include: "/views/accidents.view.lkml"
