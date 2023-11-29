@@ -10,7 +10,7 @@ explore: vehicules {
     view_label: "accidents"
     type: left_outer
     relationship: one_to_one
-    sql_on: ${vehicules.num_acc}=${accidents.id_accident};;
+    sql_on: ${vehicules.num_acc}=Integer(${accidents.id_accident});;
   }
   join : usagers  {
     view_label: "usagers"
