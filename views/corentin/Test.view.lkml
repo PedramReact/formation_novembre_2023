@@ -1,6 +1,5 @@
 include: "/views/vehicules.view.lkml"
 include: "/views/caracteristiques.view.lkml"
-include: "/views/accidents.view.lkml"
 include: "/views/lieux.view.lkml"
 include: "/views/usagers.view.lkml"
 
@@ -10,7 +9,7 @@ explore: vehicules {
     view_label: "usagers"
     type: left_outer
     relationship: many_to_one
-    sql_on: ${vehicules.id_vehicule}=${usagers.id_vehicule};;
+    sql_on: ${vehicules.num_acc}=${usagers.num_acc};;
   }
   join : lieux {
     view_label: "lieux"
