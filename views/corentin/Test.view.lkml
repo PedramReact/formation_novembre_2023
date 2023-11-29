@@ -4,7 +4,8 @@ include: "/views/caracteristiques.view.lkml"
 explore: vehicules {
   join : caracteristiques  {
     view_label: "caractéristiques"
-    sql: LEFT JOIN ${caracteristiques.num_acc};;
+    type: left_outer
     relationship: one_to_many
+    sql_on: ${vehicules.num_acc}=${caracteristiques.num_acc};;
   }
 }
