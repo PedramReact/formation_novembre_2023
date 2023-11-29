@@ -9,7 +9,7 @@ explore: vehicules {
   join : accidents  {
     view_label: "accidents"
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_one
     sql_on: ${vehicules.num_acc}=${accidents.id_accident};;
   }
   join : usagers  {
