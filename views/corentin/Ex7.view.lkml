@@ -1,4 +1,4 @@
-include: "/views/vehicules.view.lkml"
-view: +vehicules {
+include: "/views/lieux.view.lkml"
+view: +lieux{
 
   }
