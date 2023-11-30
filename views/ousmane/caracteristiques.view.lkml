@@ -1,4 +1,4 @@
-view: caracteristiques {
+view: caracteristiques_accident{
   sql_table_name: `sub-jms-gcp-for-looker.looker_formation.caracteristiques` ;;
 
   dimension: adr {
@@ -73,6 +73,7 @@ view: caracteristiques {
   }
   dimension: num_acc {
     type: number
+    primary_key: yes
     description: "Numéro d'identifiant de l’accident."
     sql: ${TABLE}.Num_Acc ;;
   }

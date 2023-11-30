@@ -1,4 +1,4 @@
-view: lieux {
+view: lieux_accidents {
   sql_table_name: `sub-jms-gcp-for-looker.looker_formation.lieux` ;;
 
   dimension: catr {
@@ -33,8 +33,10 @@ view: lieux {
   }
   dimension: num_acc {
     type: number
+    primary_key: yes
     description: "Identifiant de l’accident identique à celui du fichier \"rubrique CARACTERISTIQUES\" repris dans l’accident."
     sql: ${TABLE}.Num_Acc ;;
+
   }
   dimension: plan {
     type: number

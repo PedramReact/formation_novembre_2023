@@ -1,4 +1,4 @@
-view: usagers {
+view: usagers_accident {
   sql_table_name: `sub-jms-gcp-for-looker.looker_formation.usagers` ;;
 
   dimension: actp {
@@ -38,6 +38,7 @@ view: usagers {
   }
   dimension: num_acc {
     type: number
+    primary_key: yes
     description: "dentifiant de l’accident identique à celui du fichier \"rubrique CARACTERISTIQUES\" repris pour chacun  des usagers décrits impliqués dans l’accident."
     sql: ${TABLE}.Num_Acc ;;
   }

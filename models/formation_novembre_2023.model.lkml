@@ -8,7 +8,6 @@ include: "/test_dashboard_pauline.dashboard.lookml"
 
 include: "/ahamada/Dashbordcopy.dashboard.lookml"
 
-include: "/test_ousmane.dashboard.lookml"
 
 
 
@@ -24,24 +23,24 @@ persist_with: formation_novembre_2023_default_datagroup
 explore: vin {}
 
 
-explore: caracteristiques {
+explore: caracteristiques_accident {
   label: "Accident"
-  join: lieux {
+  join: lieux_accidents {
     type: left_outer
     relationship: one_to_one
-    sql_on: ${caracteristiques.num_acc} = ${lieux.num_acc} ;;
+    sql_on: ${caracteristiques_accident.num_acc} = ${lieux_accidents.num_acc} ;;
   }
 
-  join: vehicules {
+  join: vehicules_accident {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${caracteristiques.num_acc} = ${vehicules.num_acc} ;;
+    sql_on: ${caracteristiques_accident.num_acc} = ${vehicules_accident.num_acc} ;;
   }
 
-  join: usagers {
+  join: usagers_accident {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${caracteristiques.num_acc} = ${usagers.num_acc} ;;
+    sql_on: ${caracteristiques_accident.num_acc} = ${usagers_accident.num_acc};;
   }
 
 
