@@ -8,7 +8,7 @@ explore: vehicules {
   join : usagers  {
     view_label: "usagers"
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: ${vehicules.num_acc}=${usagers.num_acc};;
   }
   join : lieux {
@@ -20,7 +20,7 @@ explore: vehicules {
   join : caracteristiques  {
     view_label: "caracteristiques"
     type: left_outer
-    relationship: one_to_one
+    relationship: many_to_one
     sql_on: ${vehicules.num_acc}=${caracteristiques.num_acc};;
   }
 }
