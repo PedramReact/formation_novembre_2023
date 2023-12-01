@@ -100,7 +100,7 @@ view: +caracteristiques{
 
   dimension: departement {
     type: string
-   # map_layer_name: departement
+    map_layer_name: departement_france
     sql: ${dep} ;;
   }
 
