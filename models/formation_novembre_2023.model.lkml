@@ -63,3 +63,42 @@ explore: caracteristiques {
 
 
 }
+
+
+
+
+
+#exo 7
+explore: AccidentLimit {
+
+  from: vehicules
+label: "vehicule"
+  join: lieux {
+    sql_on: ${AccidentLimit.num_acc} = ${lieux.num_acc} ;;
+    type: left_outer
+    relationship: one_to_one
+    fields: [lieux.catr,lieux.circ]
+  }
+  join: caracteristiques {
+    sql_on: ${AccidentLimit.num_acc} = ${caracteristiques.num_acc} ;;
+    type: left_outer
+    relationship: many_to_one
+    fields: [caracteristiques.an_cacher]
+  }
+always_filter: {
+  filters: [caracteristiques.an_cacher: "2020"]
+}
+
+
+
+
+}
+
+
+
+
+
+map_layer: departement_france {
+  file: "/Map/departements.geojson"
+  format: topojson
+}
