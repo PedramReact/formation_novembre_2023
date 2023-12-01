@@ -32,6 +32,7 @@ view: caracteristiques {
     sql: ${TABLE}.com ;;
   }
   dimension: dep {
+    map_layer_name: departement_france
     type: string
     description: "Département : Code INSEE (Institut National de la Statistique et des Etudes Economiques) du  département (2A Corse-du-Sud – 2B Haute-Corse)."
     sql: ${TABLE}.dep ;;
