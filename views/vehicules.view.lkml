@@ -15,6 +15,7 @@ view: vehicules {
     type: string
     description: "Identifiant unique du véhicule repris pour chacun des usagers occupant ce véhicule (y compris les  piétons qui sont rattachés aux véhicules qui les ont heurtés) – Code numérique."
     sql: ${TABLE}.id_vehicule ;;
+    primary_key: yes
   }
   dimension: manv {
     type: number
@@ -30,6 +31,7 @@ view: vehicules {
     type: number
     description: "Identifiant de l’accident identique à celui du fichier \"rubrique CARACTERISTIQUES\" repris pour chacun  des véhicules décrits impliqués dans l’accident."
     sql: ${TABLE}.Num_Acc ;;
+
   }
   dimension: num_veh {
     type: string
