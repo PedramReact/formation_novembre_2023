@@ -118,7 +118,7 @@ view: +vin {
   dimension: brand_logo {
     sql: ${brand} ;;
     html:
-    {% if value == "ALPINE" %}
+    {% if value == "RENAULT" %}
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Renault_2009_logo.svg" height="170" width="255"/>
     {% elsif value == "ALPINE" %}
     <img src="https://www.retro-laser.com/wp-content/uploads/2021/12/2021-12-13-at-08-17-16.jpg" height="170" width="255"/>

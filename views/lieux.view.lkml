@@ -1,4 +1,4 @@
-view: lieux_accident {
+view: lieux{
   sql_table_name: `sub-jms-gcp-for-looker.looker_formation.lieux` ;;
 
   dimension: catr {

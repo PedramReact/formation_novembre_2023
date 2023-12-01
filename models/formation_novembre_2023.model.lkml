@@ -23,24 +23,24 @@ persist_with: formation_novembre_2023_default_datagroup
 explore: vin {}
 
 
-explore: caracteristiques_accident {
+explore: caracteristiques {
   label: "Accident"
-  join: lieux_accidents {
+  join: lieux {
     type: left_outer
     relationship: one_to_one
-    sql_on: ${caracteristiques_accident.num_acc} = ${lieux_accidents.num_acc} ;;
+    sql_on: ${caracteristiques.num_acc} = ${lieux.num_acc} ;;
   }
 
-  join: vehicules_accident {
+  join: vehicules{
     type: left_outer
     relationship: one_to_many
-    sql_on: ${caracteristiques_accident.num_acc} = ${vehicules_accident.num_acc} ;;
+    sql_on: ${caracteristiques.num_acc} = ${vehicules.num_acc} ;;
   }
 
-  join: usagers_accident {
+  join: usagers {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${caracteristiques_accident.num_acc} = ${usagers_accident.num_acc};;
+    sql_on: ${caracteristiques.num_acc} = ${usagers.num_acc};;
   }
 
 
