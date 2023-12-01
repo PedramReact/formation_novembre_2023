@@ -36,9 +36,7 @@ explore: vehicules {
     relationship: one_to_many
       }
 }
-explore: caracteristiques {
 
-}
 
 explore: vin {}
 
