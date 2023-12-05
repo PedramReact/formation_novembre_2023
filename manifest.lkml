@@ -16,3 +16,10 @@ visualization: {
   label: "visuel_Treemaps"
 
 }
+visualization: {
+
+  id: "visuel_test_222"
+  file: "test.js"
+  label: "visuel_demande"
+
+}

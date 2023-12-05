@@ -18,6 +18,10 @@ datagroup: formation_novembre_2023_default_datagroup {
 
 persist_with: formation_novembre_2023_default_datagroup
 
+
+
+explore: vin {}
+
 explore: vehicules {
   label: "Accident_Vehicule"
   join: caracteristiques {
@@ -34,13 +38,8 @@ explore: vehicules {
     sql_on: ${vehicules.num_acc} = ${usagers.num_acc} ;;
     type: left_outer
     relationship: one_to_many
-      }
+  }
 }
-
-
-explore: vin {}
-
-
 explore: caracteristiques {
   label: "Accident"
   join: lieux {
