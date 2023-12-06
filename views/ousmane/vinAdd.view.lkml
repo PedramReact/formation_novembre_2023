@@ -2,7 +2,7 @@ include: "/views/vin.view.lkml"
 view: +vin {
 
 #
- measure: distinct_model {
+  measure: distinct_model {
     type: count_distinct
     sql: ${model} ;;
     drill_fields: [model]
@@ -27,7 +27,7 @@ view: +vin {
           else 'others'
         end
         ;;
-        label: "type de carburant"
+    label: "type de carburant"
   }
 
   #

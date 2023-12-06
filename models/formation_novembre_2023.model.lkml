@@ -60,7 +60,11 @@ explore: caracteristiques {
     sql_on: ${caracteristiques.num_acc} = ${usagers.num_acc};;
   }
 
+}
 
+map_layer: dep_map_departement {
+  file: "/Map/departements.geojson"
+  format: topojson
 }
 
 
@@ -71,7 +75,7 @@ explore: caracteristiques {
 explore: AccidentLimit {
 
   from: vehicules
-label: "vehicule"
+  label: "vehicule"
   join: lieux {
     sql_on: ${AccidentLimit.num_acc} = ${lieux.num_acc} ;;
     type: left_outer
@@ -84,17 +88,11 @@ label: "vehicule"
     relationship: many_to_one
     fields: [caracteristiques.an_cacher]
   }
-always_filter: {
-  filters: [caracteristiques.an_cacher: "2020"]
-}
-
-
-
+  always_filter: {
+    filters: [caracteristiques.an_cacher: "2020"]
+  }
 
 }
-
-
-
 
 
 map_layer: departement_france {
