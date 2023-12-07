@@ -34,5 +34,6 @@ explore: vehicules {
       }
 }
 
+explore: derived_table_num_accidents {}
 
 explore: vin {}
