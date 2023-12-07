@@ -17,4 +17,21 @@ view: +caracteristiques {
     filters: [an: "2021"]
     drill_fields: [dep, adr, num_acc]
   }
+
+  dimension_group: current_date {
+    type: time
+    timeframes: [
+      date,
+      month,
+      year
+    ]
+    datatype: date
+    sql: current_date() ;;
+    label: "Aujourd'hui"
+  }
+
+  measure: anciennete {
+    type: number
+    sql: ${current_date_year} - ${an} ;;
+  }
  }
