@@ -40,6 +40,7 @@ view: usagers {
     type: number
     description: "dentifiant de l’accident identique à celui du fichier \"rubrique CARACTERISTIQUES\" repris pour chacun  des usagers décrits impliqués dans l’accident."
     sql: ${TABLE}.Num_Acc ;;
+    primary_key: yes
   }
   dimension: num_veh {
     type: string
