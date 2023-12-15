@@ -37,4 +37,24 @@ view: +caracteristiques {
     sql: ${an} ;;
     hidden: yes
   }
+  measure: nombre_accident_2019 {
+    type: count
+    filters: [an: "2019"]
+    drill_fields: [source*]
+  }
+  measure: nombre_accident_2020 {
+    type: count
+    filters: [an: "2020"]
+    drill_fields: [source*]
+  }
+  measure: nombre_accident_2021 {
+    type: count
+    filters: [an: "2021"]
+    drill_fields: [source*]
+  }
+
+  set: source {
+    fields: [num_acc,adr,dep]
+  }
+
   }
