@@ -4,6 +4,7 @@ view: vin {
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
+    description: " c'est la marque de voiture"
   }
   dimension: catalogue_price {
     type: number

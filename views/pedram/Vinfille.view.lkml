@@ -4,4 +4,5 @@ view: +vin {
     type: count_distinct
     sql: ${engine} ;;
   }
+
   }
